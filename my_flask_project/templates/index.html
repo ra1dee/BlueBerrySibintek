@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</head>
+<body>
+    <h1>Выберите действие</h1>
+    <form id="userForm">
+        <input type="text" id="userInput" name="userInput" placeholder="Введите запрос" required />
+        <button type="button" id="submitButton">Принять</button>
+        <button type="button" onclick="refresh()" id="refreshButton">Получить результат</button>
+    </form>
+    {% if data %}
+        <h2>Полученные данные:</h2>
+        <pre>{{ data }}</pre>
+    {% endif %}
+</body>
+</html>
